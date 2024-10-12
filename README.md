@@ -18,3 +18,9 @@
 - Run the application 
 
   `ng serve`
+
+  - Comando para crear componentes standalone 
+
+    `ng generate component Home --standalone --inline-template`
+    --standalone indica componente independiente
+    --inline-template indica un componente sihtml separado, sino dento del ts.
