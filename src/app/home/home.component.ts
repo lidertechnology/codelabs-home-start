@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { HousingLocationComponent } from "../housing-location/housing-location.component";
 import { HousinLocation } from '../housin-location';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-home',
@@ -19,10 +19,10 @@ import { HousinLocation } from '../housin-location';
 
     <section class="results">
 
-      
-    <app-housing-location></app-housing-location>
-      
-
+    @for (item of items; track $index) {
+      <app-housing-location [conector]="item" ></app-housing-location>  
+    }  
+    
     </section>
     
   `,
@@ -32,7 +32,7 @@ export class HomeComponent {
 
   // Creamos una variable de tipo interface creada que es un array de propiedades.
 
-  housingLocationList: HousinLocation[] = [
+  items: HousinLocation[] = [
     {
       id: 0,
       name: 'Acme Fresh Start Housing',
